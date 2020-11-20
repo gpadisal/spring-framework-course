@@ -6,6 +6,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+
+/**
+ * Sample Controller to demonstrate the Rest API calls
+ * @author 515659
+ *
+ */
 @RestController
 @RequestMapping("/greeting")
 public class HelloController {
