@@ -1,0 +1,31 @@
+<!doctype html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  
+  <head th:replace="layouts :: header"></head>
+
+  <body>
+
+	<nav th:replace="layouts :: prjNavBar"></nav>
+
+	<div class="container">
+		<table class="table">
+		  <thead>
+		    <tr>
+		      <th scope="col">Project Name</th>
+		      <th scope="col">Project Stage</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr th:each="project: ${projects}">
+		      <td th:text="${project.name}"/>
+		      <td th:text="${project.stage}"/>
+		    </tr>
+		  </tbody>
+		</table>
+	</div>
+	
+	<a class="btn btn-primary" href="/projects/new" role="button">Create Project</a>	
+	
+  </body>
+</html>
