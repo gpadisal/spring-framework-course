@@ -17,7 +17,9 @@ import javax.persistence.ManyToMany;
 public class Project {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY) 
+	// identity uses database column to get next 
+	//sequence id when we use data.sql to insert the data
 	private long projectId;
 	private String name;
 	private String stage;

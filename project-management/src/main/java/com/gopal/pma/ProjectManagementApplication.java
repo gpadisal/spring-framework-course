@@ -30,8 +30,11 @@ public class ProjectManagementApplication {
 	}
 	
 	
+	/**
+	 * Commented out following code in order seed the data from data.sql 
+	 */
 	
-	@Bean
+/*	@Bean
 	CommandLineRunner runner() {
 		
 		return args -> {
@@ -72,15 +75,7 @@ public class ProjectManagementApplication {
 			emp1.setProjects(Arrays.asList(pro1, pro3, pro4));
 			emp2.setProjects(Arrays.asList(pro1));
 			emp3.setProjects(Arrays.asList(pro2, pro4));
-			/*
-			 * // save employees in database List<Employee> employees =
-			 * Arrays.asList(emp1,emp2, emp3, emp4, emp5, emp6, emp7, emp8, emp9);
-			 * empRepo.saveAll(employees);
-			 * 
-			 * // save projects in database List<Project> projects =
-			 * Arrays.asList(pro1,pro2, pro3, pro4); prjRepo.saveAll(projects);
-			 */
-			
+						
 			// save employees in database
 
 			empRepo.save(emp1);
@@ -101,14 +96,10 @@ public class ProjectManagementApplication {
 			prjRepo.save(pro3); 
 			prjRepo.save(pro4);
 			
-
-			
-			
 		};
-		
-	}
+	*/	
 	
-	
+}
 	
 
-}
+
