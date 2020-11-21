@@ -1,5 +1,6 @@
 package com.gopal.pma.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -58,7 +59,9 @@ public class Employee {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
+		projects = new ArrayList<>();
 	}
+	
 	public long getEmployeeId() {
 		return employeeId;
 	}
