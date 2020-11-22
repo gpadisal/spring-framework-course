@@ -31,7 +31,7 @@ public class ProjectController {
 	public String getEmployess(Model model) {
 		List<Project> projects = proRep.findAll();
 		model.addAttribute("projects",  projects);
-		return "projects/prj-list";
+		return "projects/list-projects";
 	}
 
 	

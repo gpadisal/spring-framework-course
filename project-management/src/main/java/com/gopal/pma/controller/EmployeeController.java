@@ -30,7 +30,7 @@ public class EmployeeController {
 	public String getEmployess(Model model) {
 		List<Employee> emps = empRep.findAll();
 		model.addAttribute("employees",  emps);
-		return "employees/emp-list";
+		return "employees/list-employees";
 	}
 	
 	
