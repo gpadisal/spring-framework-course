@@ -26,12 +26,18 @@
 						      <td th:text="${project.name}"/>
 						      <td th:text="${project.stage}"/>
 						    </tr>
-                     </tbody>
+						</tbody>
                     </table>
                 </div>
 
                 <div class="col-md-4">
                     <canvas id="myPieChart" height="50" width="50"></canvas>
+                    
+                    <script>
+                    	// remember 2 sq brackets to load the model attributes in javascript
+                    	// [[  ${modelAttribute}  ]]
+                    	var chartData = "[[${projectStatusCnt}]]";
+                    </script>
                 </div>
             </div>
         </div>
@@ -42,22 +48,18 @@
                 <div class="col-md-6">
                     <table class="table table-bordered table-striped">
                         <thead class="thead-dark">
-					 		<tr>
-							      <th scope="col">Emp Id</th>
-							      <th scope="col">First Name</th>
-							      <th scope="col">Last Name</th>
-							      <th scope="col">Email</th>
-							      
-							    </tr>
-					    </thead>
+                            <tr>
+                                <th scope="col">First Name</th>
+                                <th scope="col">Last Name</th>
+                                <th scope="col">Employee Projects</th>
+                            </tr>
+                        </thead>
                         <tbody>
-							<tr th:each="employee: ${employees}">
-						      <td th:text="${employee.employeeId}"/>
-						      <td th:text="${employee.firstName}"/>
-						      <td th:text="${employee.lastName}"/>
-						      <td th:text="${employee.email}"/>
-						    </tr>
-
+                            <tr th:each="empPrj: ${employeeProjects}">
+                                <td th:text="${empPrj.firstName}" />
+                                <td th:text="${empPrj.lastName}" />
+                                <td th:text="${empPrj.projectCount}" />
+                            </tr>
                         </tbody>
                     </table>
                 </div>
