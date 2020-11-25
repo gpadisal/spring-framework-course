@@ -1,19 +1,22 @@
 package com.gopal.pma;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 import com.gopal.pma.dao.EmployeeRepository;
 import com.gopal.pma.dao.ProjectRepository;
-import com.gopal.pma.entity.Employee;
-import com.gopal.pma.entity.Project;
+import com.gopal.pma.example.Car;
+import com.gopal.pma.example.Engine;
+import com.gopal.pma.example.Steering;
+import com.gopal.pma.example.Tires;
+
+//@SpringBootApplication(scanBasePackages = {"com.gopal.pma", "com.gopal.utils"})
+//Both packages will be scanned, 
+//otherwise with out scanBasePackages definitions,  only com.gopal.pma will be scanned
+// You can't have @SpringBootApplication(scanBasePackages = {"com.gopal.utils"}), 
+// only com.gopal.utils package will be scanned
 
 @SpringBootApplication
 public class ProjectManagementApplication {
@@ -98,6 +101,16 @@ public class ProjectManagementApplication {
 			
 		};
 	*/	
+	
+	
+	//How to create an bean of Type of Car to inject into Home Controller
+	// or You can use class annotate a class with Config to create beans
+	
+//	@Bean
+//	public Car newCar() {
+//		return new Car(new Engine(), new Tires(), new Steering());
+//	}
+	
 	
 }
 	

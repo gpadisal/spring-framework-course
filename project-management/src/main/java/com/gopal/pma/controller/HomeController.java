@@ -15,13 +15,17 @@ import com.gopal.pma.dto.EmployeeProject;
 import com.gopal.pma.dto.ProjectStage;
 import com.gopal.pma.entity.Employee;
 import com.gopal.pma.entity.Project;
+import com.gopal.pma.example.Car;
 
 @Controller
 public class HomeController {
 
 	
+	@Autowired // injected by @Bean definition in Spring Application or Config class
+	Car car;
+	
 	@Autowired
-	ProjectRepository proRep;
+	ProjectRepository proRep; //Automatically created since it extends CrudRepository , so just autowired annotation injects the instance.
 	
 	@Autowired
 	EmployeeRepository empRep;
