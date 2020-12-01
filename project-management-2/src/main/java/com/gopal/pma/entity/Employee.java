@@ -12,14 +12,15 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-
-import net.bytebuddy.dynamic.loading.ClassReloadingStrategy.Strategy;
+import javax.persistence.SequenceGenerator;
 
 @Entity
 public class Employee {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "employee_generator")// change to sequence
+	@SequenceGenerator(name = "employee_generator", sequenceName = "employee_seq", allocationSize = 1)
+	
 	private long employeeId;
 	private String firstName;
 	private String lastName;	
@@ -50,7 +51,7 @@ public class Employee {
 	@JoinTable(name = "project_employee", 
 				joinColumns=@JoinColumn(name="employee_id"),
 				inverseJoinColumns=@JoinColumn(name="project_id"))
-	private List<Project> projects = new ArrayList<>();
+	private List<Project> projects;
 	
 	
 	public Employee() {
@@ -62,6 +63,7 @@ public class Employee {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
+		projects = new ArrayList<>();
 	}
 	
 	public long getEmployeeId() {

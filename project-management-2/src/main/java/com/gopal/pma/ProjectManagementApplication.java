@@ -12,9 +12,9 @@ import com.gopal.pma.example.Engine;
 import com.gopal.pma.example.Steering;
 import com.gopal.pma.example.Tires;
 
-//@SpringBootApplication(scanBasePackages = {"com.gopal.pma", "com.gopal.utils"})
-//Both packages will be scanned, 
-//otherwise with out scanBasePackages definitions,  only com.gopal.pma will be scanned
+// @SpringBootApplication(scanBasePackages = {"com.gopal.pma", "com.gopal.utils"})
+// Both packages will be scanned, 
+// otherwise with out scanBasePackages definitions,  only com.gopal.pma will be scanned
 // You can't have @SpringBootApplication(scanBasePackages = {"com.gopal.utils"}), 
 // only com.gopal.utils package will be scanned
 
@@ -104,7 +104,7 @@ public class ProjectManagementApplication {
 	
 	
 	//How to create an bean of Type of Car to inject into Home Controller
-	// or You can use class annotate a class with Configuration to create beans
+	// or You can use class annotate a class with Config to create beans
 	
 //	@Bean
 //	public Car newCar() {

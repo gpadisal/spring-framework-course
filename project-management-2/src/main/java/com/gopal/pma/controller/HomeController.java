@@ -25,7 +25,7 @@ public class HomeController {
 	private String ver;
 
 	
-	@Autowired // injected by @Bean definition in Spring Application or Configuration class
+	@Autowired // injected by @Bean definition in Spring Application or Config class
 	Car car;
 	
 	@Autowired

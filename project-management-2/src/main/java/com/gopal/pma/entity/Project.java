@@ -12,12 +12,15 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.SequenceGenerator;
 
 @Entity
 public class Project {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY) 
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "project_generator")  // change to sequence
+	@SequenceGenerator(name = "project_generator", sequenceName = "project_seq", allocationSize = 1)
+	
 	// identity uses database column to get next 
 	//sequence id when we use data.sql to insert the data
 	private long projectId;
@@ -57,7 +60,6 @@ public class Project {
 		this.setName(name);
 		this.stage = stage;
 		this.description = description;
-
 	}
 
 	public long getProjectId() {

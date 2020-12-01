@@ -65,16 +65,6 @@ public class ProjectController {
 	 */
 	
 	
-	// ManyToMany Relation not saving employee along with project
-	/*
-	 * @PostMapping("/save") public String saveProject(Project project, Model model)
-	 * {
-	 * 
-	 * //save project proRep.save(project);
-	 * 
-	 * return "redirect:/projects"; }
-	 */
-	
 	// ManyToMany Relation 
 	@PostMapping("/save")
 	public String saveProject(Project project,  @RequestParam List<Long> employees , Model model) {
@@ -90,6 +80,7 @@ public class ProjectController {
 				
 		return "redirect:/projects";
 	}
+	
 	
 	
 	
