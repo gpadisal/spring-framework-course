@@ -73,8 +73,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 		http.authorizeRequests()
 			.antMatchers("/projects/new").hasRole("ADMIN") // expects ROLE_ADMIN or ROLE_USER , role name prefixed with ROLE_
 			.antMatchers("/projects").hasRole("ADMIN")
-			.antMatchers("/employees/new").hasAuthority("ADMIN")
-			.antMatchers("/employees").hasAuthority("ADMIN") // looks for ADMIN or USER in role name field with out ROLE_
+			.antMatchers("/employees/new").hasRole("ADMIN")
+			.antMatchers("/employees").hasRole("ADMIN")			
+//			.antMatchers("/employees/new").hasAuthority("ADMIN")
+//			.antMatchers("/employees").hasAuthority("ADMIN") // looks for ADMIN or USER in role name field with out ROLE_
 //			.antMatchers("/h2_console/**").permitAll()
 //			.antMatchers("/").authenticated().and().formLogin();
 			.antMatchers("/").permitAll().and()  // permit all means not protected.
